@@ -52,9 +52,11 @@ body {
     border-radius: 1.2rem;
     border: 1px solid transparent;
     color: white;
-    text-align: center; 
+    text-align: center;
     align-items: center;
     justify-content: center;
+    font-family: 'ATC Arquette';
+    font-weight: 500;
 }
 
 /*-------------------------------------------------------------------------------- */
