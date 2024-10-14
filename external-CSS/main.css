@@ -8,15 +8,6 @@
     font-size: xx-large;
 }
 
-/* .vl { */
-
-    /* border-left: 1px solid #D3D3D3;
-    font-size: 2500%;
-    border-radius: 20px;
-    background-color: grey; */
-    /* align-items: center; */
-/* } */
-
 body {
     background-image: url("F:/TRANSKOM/rsrc/Screenshot 2024-10-13 222947.png");
     background-color: white;
@@ -26,11 +17,26 @@ body {
 .Sign-In-Text {
     font-family: 'ATC Arquette';
     font-weight: 550;
-    padding-left: 1120px;
+    /* padding-left: 1120px; */
+    padding-left: 73%;
     font-size: x-large;
 }
 
 .Input{
-    padding-left: 900px;
+    padding-left: 920px;
+}
+
+.Input-Email {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 80%;
+    height: 4.8rem;
+    padding: 1.2rem 1.6rem;
+    background: rgb(248, 248, 248);
+    border-radius: 1.2rem;
+    border: 1px solid transparent;
+    color: rgb(97, 97, 97);
 }
 /*-------------------------------------------------------------------------------- */
