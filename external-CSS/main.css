@@ -8,14 +8,14 @@
     font-size: xx-large;
 }
 
-.vl {
+/* .vl { */
 
-    border-left: 1px solid #D3D3D3;
+    /* border-left: 1px solid #D3D3D3;
     font-size: 2500%;
     border-radius: 20px;
-    background-color: grey;
-    align-items: center;
-}
+    background-color: grey; */
+    /* align-items: center; */
+/* } */
 
 body {
     background-image: url("F:/TRANSKOM/rsrc/Screenshot 2024-10-13 222947.png");
@@ -23,8 +23,14 @@ body {
     background-repeat: no-repeat;
 }
 
-/* .right-login-side {
+.Sign-In-Text {
+    font-family: 'ATC Arquette';
+    font-weight: 550;
+    padding-left: 1120px;
+    font-size: x-large;
+}
 
-} */
-
+.Input{
+    padding-left: 900px;
+}
 /*-------------------------------------------------------------------------------- */
