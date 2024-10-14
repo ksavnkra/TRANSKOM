@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-BoldItalic.eot');
+    src: local('ATC Arquette Bold Italic'), local('ATCArquette-BoldItalic'),
+        url('ATCArquette-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-BoldItalic.woff2') format('woff2'),
+        url('ATCArquette-BoldItalic.woff') format('woff'),
+        url('ATCArquette-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Medium.eot');
+    src: local('ATC Arquette Medium'), local('ATCArquette-Medium'),
+        url('ATCArquette-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Medium.woff2') format('woff2'),
+        url('ATCArquette-Medium.woff') format('woff'),
+        url('ATCArquette-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-MediumItalic.eot');
+    src: local('ATC Arquette Medium Italic'), local('ATCArquette-MediumItalic'),
+        url('ATCArquette-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-MediumItalic.woff2') format('woff2'),
+        url('ATCArquette-MediumItalic.woff') format('woff'),
+        url('ATCArquette-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Black.eot');
+    src: local('ATC Arquette Black'), local('ATCArquette-Black'),
+        url('ATCArquette-Black.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Black.woff2') format('woff2'),
+        url('ATCArquette-Black.woff') format('woff'),
+        url('ATCArquette-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Regular.eot');
+    src: local('ATC Arquette Regular'), local('ATCArquette-Regular'),
+        url('ATCArquette-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Regular.woff2') format('woff2'),
+        url('ATCArquette-Regular.woff') format('woff'),
+        url('ATCArquette-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Extralight.eot');
+    src: local('ATC Arquette Extralight'), local('ATCArquette-Extralight'),
+        url('ATCArquette-Extralight.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Extralight.woff2') format('woff2'),
+        url('ATCArquette-Extralight.woff') format('woff'),
+        url('ATCArquette-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-LightItalic.eot');
+    src: local('ATC Arquette Light Italic'), local('ATCArquette-LightItalic'),
+        url('ATCArquette-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-LightItalic.woff2') format('woff2'),
+        url('ATCArquette-LightItalic.woff') format('woff'),
+        url('ATCArquette-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-SemiboldItalic.eot');
+    src: local('ATC Arquette Semibold Italic'), local('ATCArquette-SemiboldItalic'),
+        url('ATCArquette-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-SemiboldItalic.woff2') format('woff2'),
+        url('ATCArquette-SemiboldItalic.woff') format('woff'),
+        url('ATCArquette-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-RegularItalic.eot');
+    src: local('ATC Arquette Regular Italic'), local('ATCArquette-RegularItalic'),
+        url('ATCArquette-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-RegularItalic.woff2') format('woff2'),
+        url('ATCArquette-RegularItalic.woff') format('woff'),
+        url('ATCArquette-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Light.eot');
+    src: local('ATC Arquette Light'), local('ATCArquette-Light'),
+        url('ATCArquette-Light.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Light.woff2') format('woff2'),
+        url('ATCArquette-Light.woff') format('woff'),
+        url('ATCArquette-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-Bold.eot');
+    src: local('ATC Arquette Bold'), local('ATCArquette-Bold'),
+        url('ATCArquette-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-Bold.woff2') format('woff2'),
+        url('ATCArquette-Bold.woff') format('woff'),
+        url('ATCArquette-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-ExtralightItalic.eot');
+    src: local('ATC Arquette Extralight Italic'), local('ATCArquette-ExtralightItalic'),
+        url('ATCArquette-ExtralightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-ExtralightItalic.woff2') format('woff2'),
+        url('ATCArquette-ExtralightItalic.woff') format('woff'),
+        url('ATCArquette-ExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ATC Arquette';
+    src: url('ATCArquette-BlackItalic.eot');
+    src: local('ATC Arquette Black Italic'), local('ATCArquette-BlackItalic'),
+        url('ATCArquette-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('ATCArquette-BlackItalic.woff2') format('woff2'),
+        url('ATCArquette-BlackItalic.woff') format('woff'),
+        url('ATCArquette-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+

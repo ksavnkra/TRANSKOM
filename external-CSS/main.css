@@ -1,0 +1,30 @@
+/* ---Login CSS---------------------------------------------------------------------*/
+.logo-login {
+    text-align: center;
+    padding: 50px;
+    font-family: 'ATC Arquette';
+    font-weight: 550;
+    color: #0e57d7;
+    font-size: xx-large;
+}
+
+.vl {
+
+    border-left: 1px solid #D3D3D3;
+    font-size: 2500%;
+    border-radius: 20px;
+    background-color: grey;
+    align-items: center;
+}
+
+body {
+    background-image: url("F:/TRANSKOM/rsrc/Screenshot 2024-10-13 222947.png");
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+/* .right-login-side {
+
+} */
+
+/*-------------------------------------------------------------------------------- */
