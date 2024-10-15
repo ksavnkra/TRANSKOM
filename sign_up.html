@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="external-CSS/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/psn0aff.css">
+    <link href="rsrc/font/stylesheet.css" rel="stylesheet">
+    <link href="build/css/demo.css" rel="stylesheet">
+    <link href="build/css/intlTelInput.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="build/js/intlTelInput.js"></script>
+    <title>TRANSKOM : Foreign Currency Exchange Program</title>
+</head>
+
+<body>
+    <!-- <p style="background-image: url('rsrc/Screenshot 2024-10-13 222947.png');"></p> -->
+    <div class="logo-login">
+        <img src="rsrc/transkom_logo_1.png" width="70px">
+        Transkom
+    </div>
+    <img style="margin-left: 72.4%;" src="rsrc/icons8-male-user-100.png">
+    <br>
+    <div class="Sign-In-Text">
+        Sign Up
+    </div>
+    <br>
+    <div class="Input">
+        <input class="Input-Name" name="first-name" id="first-name" placeholder="First Name" type="string" value="">
+        &nbsp;
+        <input class="Input-Name" name="last-name" id="last-name" placeholder="Last Name" type="string" value="">
+        <br>
+        <br>
+        <input class="Input-contact" type="tel" id="contact-number" placeholder="Contact Number" onkeyup="NumberOnly()">
+        <br>
+        <br>
+        <input class=" Input-Email" name="email" id="email" placeholder="Email id" type="string" value="">
+        <br>
+        <input class="Input-Email" name="password" id="password" placeholder="Password" type="password">
+        <br>
+        <button class="Input-Button" name="Sign-Up" id="Sign-Up">Continue</button>
+        <br>
+        <a href="login.html">
+            <button class="Input-Button" name="Sign-In" id="Sign-In" style="color: white;background: green;">Already
+                have an
+                Account? Sign In</button>
+        </a>
+        <br>
+    </div>
+    <script>
+        var input = document.querySelector("#contact-number");
+        window.intlTelInput(input, {});
+        function NumberOnly() {
+            var num = /[^(0-9 , '+')]/gi;
+            input.value = input.value.replace(num, "");
+        }
+    </script>
+</body>
+
+</html>
