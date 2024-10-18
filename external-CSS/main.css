@@ -13,10 +13,19 @@
     /* font-weight: 550;     */
     text-align: center;
     color: white;
-    font-size:medium;
+    font-size: medium;
+}
+
+.logo {
+    margin-top: 5px;
+    font-family: 'ATC Arquette';
+    font-weight: 520;
+    color: #0e57d7;
+    font-size: 220%;
+    display: inline;
 }
 
 .navbar {
     margin-left: 6.7%;
-
+    /* display: inline; */
 }
