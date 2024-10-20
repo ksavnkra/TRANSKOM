@@ -1,19 +1,73 @@
-/* body {
-    margin-top: 53%;
-    background-image: url("F:/TRANSKOM/rsrc/Transkom-Background.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 693px;
-    margin-left: 6.7%;
-} */
+.heading-section-2 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 500; */
+    font-style: normal;
+    text-align: center;
+    font-size: 60px;
+}
+
+.heading-section-2-part-2 {
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.section2 {
+    background-color: black;
+    height: 100vh;
+    margin-top: 10vh;
+}
+
+.section2-text {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    color: white;
+    opacity: 0.84;
+    font-weight: 250;
+    font-size: 150%;
+}
+
+.main {
+    height: 70vh;
+    display: flex;
+}
+
+.bgs {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    height: 80%;
+    width: 50%;
+    top: 10%;
+}
+
+.bgimg {
+    /* height: 100%; */
+    width: 100%;
+}
+
+.headings {
+    display: flex;
+}
+
+.side1 {
+    width: 50%;
+    padding-left: 10rem;
+    padding-top: 4rem;
+    font-family: 'ATC Arquette';
+}
+
 .top-nav {
     background-color: #0e57d7;
     height: 38px;
     font-family: 'ATC Arquette';
-    /* font-weight: 550;     */
     text-align: center;
     color: white;
     font-size: medium;
+    line-height: 38px;
 }
 
 .logo {
@@ -23,9 +77,184 @@
     color: #0e57d7;
     font-size: 220%;
     display: inline;
+    padding: 0 90px;
+    line-height: 70px;
 }
 
 .navbar {
-    margin-left: 6.7%;
-    /* display: inline; */
+    height: 80px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    list-style-type: none;
+    float: right;
+    margin-right: 90px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    font-weight: 500;
+    margin: 0 15px;
+    font-family: 'ATC Arquette';
+    color: black;
+}
+
+nav ul li a {
+    color: black;
+}
+
+nav ul li a:hover {
+    color: #0e57d7;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #0e57d7;
+    float: right;
+    line-height: 77px;
+    margin-right: 90px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+a:hover {
+    color: #0e57d7;
+}
+
+.liltext {
+    font-size: 25px;
+    color: gray;
+}
+
+.heading {
+    font-size: 55px;
+}
+
+.Input-Button {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 30%;
+    height: 4.8rem;
+    padding: 1.2rem 1.6rem;
+    background: #0e57d7;
+    border-radius: 1.2rem;
+    border: 1px solid transparent;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'ATC Arquette';
+    font-weight: 500;
+}
+
+@media (max-width: 1048px) {
+    .main {
+        height: 70vh;
+        display: flex;
+    }
+
+    .bgimg {
+        opacity: 0.3;
+    }
+
+    .checkbtn {
+        margin-right: 1rem;
+    }
+
+    .logo {
+        padding: 0;
+    }
+
+    .side1 {
+        width: 100%;
+    }
+
+    section .heading {
+        z-index: 20;
+    }
+
+    .side1 {
+        width: 75%;
+        padding-left: 10rem;
+        padding-top: 4rem;
+        font-family: 'ATC Arquette';
+    }
+}
+
+@media (max-width: 1037px) {
+    .logo {
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    .main {
+        height: 70vh;
+        display: flex;
+    }
+
+
+}
+
+@media (max-width: 1037px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 100px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: medium;
+    }
+
+    a:hover {
+        color: #0e57d7;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .side1 {
+        width: 80%;
+        padding-left: 5rem;
+        padding-top: 0rem;
+        font-family: 'ATC Arquette';
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .liltext {
+        font-size: 15px;
+    }
 }

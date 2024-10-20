@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/psn0aff.css">
     <link rel="stylesheet" href="external-CSS/main.css">
     <link rel="stylesheet" href="rsrc/font/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>TRANSKOM : Foreign Currency Exchange Program</title>
@@ -21,19 +27,50 @@
             more</a><b> &nearr;</b>
     </nav>
     <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
         <div class="logo">
             <a href="index.html" style="text-decoration: none;"><img src="rsrc/transkom_logo_1.png"
-                    width="5%">Transkom</a>
+                    width="50px">Transkom</a>
         </div>
         <ul>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Solutions</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Feedback</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">Products &#11206;</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">Solutions</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">Contact</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">Feedback</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">About</a></li>
+            <li><a class="active" href="#" style="text-decoration: none;">Profile</a></li>
         </ul>
     </nav>
+    <section class="main">
+        <div class="headings">
+            <div class="side1">
+                <h1 class="heading"><br>Enable users to <span style="color: #0e57d7;">buy or sell currency</span> from our
+                    app.</h1>
+                <p class="liltext">Available across many currencies via cards, bank transfers and other payment
+                    methods in 162 countries.</p>
+                <br>
+                <button class="Input-Button">Try Now</button>
+            </div>
+            <div class="2"></div>
+        </div>
+        <div class="bgs">
+            <img class="bgimg" src="./rsrc/Transkom-Background.png" alt="">
+        </div>
+    </section>
+
+    <section class="section2">
+        <br><br>
+        <div class="heading-section-2">Designed for <span class="heading-section-2-part-2">who desire.</span></div>
+        <br>
+        <div class="section2-text">Transkom is a developer integration toolkit to let users buy/sell currency in any
+            app, website or web plugin.</div>
+    </section>
+
+
+
 </body>
 
 </html>
