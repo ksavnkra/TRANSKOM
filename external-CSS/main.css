@@ -1,26 +1,52 @@
-.swiper-wrapper .card-container .card {
-    padding: 2.1875rem;
-    margin-bottom: 0;
-    min-height: 15rem;
+.title{
+    font-family: "Inter", sans-serif;
+    color: #0e57d7;
+    font-weight: 600;
+    margin-top: 3%;
+    font-size: large;
+    width: 50%;
 }
-.swipper{
+.heading-section-4 {
+    text-align: center;
+    
+}
+.svg-file{
+    width: 20%;
+}
+.card{
+    background-color: #dededf;
+    padding: 5px;
+    width: 30%;
+    border-radius: 5%;
+    height: 25vh;
+}
+.svg-image {
+    width: 60%;
+}
+
+.swipper {
     cursor: grab;
     height: 30vh;
-    margin-top: 50px;
-} 
-.section-4-text{
+    margin-top: 120px;
+    margin-left: 8%;
+    width: 85%;
+}
+
+.section-4-text {
     text-align: center;
     color: black;
     font-family: "Inter", sans-serif;
     font-size: 42px;
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
     font-weight: 500;
- }
- .section4{
-    height: 70vh;
- }
- .section3-images{
+}
+
+.section4 {
+    height: 80vh;
+}
+
+.section3-images {
     width: 170px;
     padding-top: 2%;
 }
