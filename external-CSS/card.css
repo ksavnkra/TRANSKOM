@@ -5,3 +5,41 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+/* body{
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #efefef ;
+} */
+.slide-content{
+    margin:0 40px;
+}
+ .card{
+    border-radius: 25px;
+    background-color: #d8d3d3;
+
+ }
+ .image-content,
+ .card-content{
+    display: flex;
+    flex-direction: column;
+    padding:10px 14px
+
+ }
+ 
+.card-image{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background:#fff;
+    padding: 3px;
+}
+.card-image .card-img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    border-radius: 50%;
+  
+}
