@@ -19,6 +19,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>TRANSKOM : Foreign Currency Exchange Program</title>
+    <!-- Swiper CSS -->
+     <link rel="stylesheet" href="external-CSS/swiper-bundle.min.css">
+    <!-- card slider css -->
+     <link rel="stylesheet" href="external-CSS/card.css">
 </head>
 
 <body>
@@ -163,10 +167,10 @@
     <section class="section4">
         <div class="headingsection4"><h1 class="headingsection4"><br>What we've<span style="color: #0e57d7;">built</span></h1></div>
         
-            <div class="slide-container">
-        <div class="slide-content">
-            <div class="card-wrapper">
-                <div class="card">
+            <div class="slide-container swiper">
+        <div class="slide-content ">
+            <div class="card-wrapper swiper-wrapper">
+                <div class="card swiper-slide">
                     <div class="image content">
                         <span class="overlay"></span>
                         <div class="card-image">
@@ -182,8 +186,14 @@
                 </div>
             </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
         </div>
     </section>
+    <!-- Swiper.js -->
+     <script src="external-JS/swiper-bundle.js"></script>
+     <script src="external-JS/main.js"></script>
 </body>
 
 </html>
