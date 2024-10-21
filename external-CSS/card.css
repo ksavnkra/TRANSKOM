@@ -59,16 +59,10 @@
     font-weight: 500;
     color:#0e57d7;
 }
-.heading {
+.headingsection4 {
     align-items: center;
     padding: 10px;
-    font-size: 110px;
-    padding-left: 350px;
+    font-size: 50px;
+    padding-left: 250px;
   }
-.built{
-    align-items: center;
-    padding: 10px;
-    font-size: 110px;
-    padding-left: 350px;
-    color: #0e57d7;
-}
+
