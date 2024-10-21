@@ -1,4 +1,26 @@
-.section3-images{
+.swiper-wrapper .card-container .card {
+    padding: 2.1875rem;
+    margin-bottom: 0;
+    min-height: 15rem;
+}
+.swipper{
+    cursor: grab;
+    height: 30vh;
+    margin-top: 50px;
+} 
+.section-4-text{
+    text-align: center;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-size: 42px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 500;
+ }
+ .section4{
+    height: 70vh;
+ }
+ .section3-images{
     width: 170px;
     padding-top: 2%;
 }
