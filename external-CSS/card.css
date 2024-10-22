@@ -4,12 +4,12 @@
     max-width: 1120px;
     width: 100%;
     background-color: white;
-    padding:100px 0;
-    cursor:-moz-grabbing;
+    padding:80px 0;
+    cursor:grab;
 }
 
 .slide-content {
-    margin: 0 40px;
+    margin:0 40px;
 }
 
 .card {
@@ -19,8 +19,27 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 20px;
+    cursor:grab;
 }
+.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
 
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 .card:hover {
     background-color: #e0e1e4;
 }
