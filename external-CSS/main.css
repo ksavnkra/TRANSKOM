@@ -1,15 +1,16 @@
-.top-navv{
+.top-navv {
     position: sticky;
     top: 0;
     background-color: white;
     z-index: 2000;
 }
+
 .team {
     position: relative;
     width: 100%;
     padding: 45px 0 15px 0;
     background-color: black;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .team .team-item {
@@ -118,7 +119,7 @@
 }
 
 .section-5 {
-    height: 80vh;
+    /* height: 80vh; */
     background-color: black;
 }
 
@@ -161,7 +162,7 @@
 }
 
 .section3 {
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #111;
 }
 
@@ -184,10 +185,9 @@
 
 .buy-sell-boxes {
     border-radius: 2rem;
-    height: 60vh;
     width: 30vw;
     background-color: white;
-    height: 90vh;
+    height: 80vh;
 }
 
 .heading-section-2 {
@@ -208,8 +208,8 @@
 
 .section2 {
     background-color: black;
-    height: 135vh;
-    margin-top: 10vh;
+    /* height: 135vh; */
+    padding-bottom: 5vh;
     text-align: center;
 }
 
@@ -223,8 +223,9 @@
 }
 
 .main {
-    height: 70vh;
+    /* height: 70vh; */
     display: flex;
+    padding-bottom: 10vh;
 }
 
 .bgs {
@@ -346,12 +347,23 @@ a:hover {
     justify-content: center;
     font-family: 'ATC Arquette';
     font-weight: 500;
+    margin-bottom: 5vh;
+    /* padding-bottom: 5vh; */
 }
 
 @media (max-width: 1048px) {
+    .buy-sell-boxes {
+        border-radius: 2rem;
+        width: 33vw;
+        background-color: white;
+        height: 65vh;
+    }
+
     .main {
-        height: 70vh;
+        /* height: 70vh; */
         display: flex;
+        margin-bottom: 10vh;
+        padding-bottom: 10vh;
     }
 
     .bgimg {
@@ -392,16 +404,18 @@ a:hover {
     }
 
     .main {
-        height: 70vh;
+        /* height: 70vh; */
         display: flex;
+        margin-bottom: 10vh;
+        padding-bottom: 10vh;
     }
 
-
-}
-
-@media (max-width: 1037px) {
     .checkbtn {
         display: block;
+    }
+
+    .section3 {
+        display: none;
     }
 
     ul {
@@ -434,7 +448,7 @@ a:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 799px) {
     .side1 {
         width: 80%;
         padding-left: 5rem;
@@ -452,5 +466,52 @@ a:hover {
 
     .section2 {
         margin-top: -20vh;
+    }
+}
+
+@media (max-width: 431px) {
+    .Input-Button {
+        font-size: 10px;
+        width: 35%;
+    }
+}
+
+@media (max-width: 630px) {
+    .heading-section-2 {
+        font-size: 40px;
+    }
+
+    .section2-text {
+        font-size: 100%;
+    }
+
+    .buy-sell-boxes {
+        border-radius: 2rem;
+        width: 50vw;
+        background-color: white;
+        height: 60vh;
+    }
+
+    .subtitle-3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .heading-section-2 {
+        font-size: 30px;
+    }
+    .section2-text {
+        font-size: 75%;
+    }
+    .headingsection4{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Input-Button-2 {
+        font-size: 15px;
+        width: 50vw;
     }
 }
