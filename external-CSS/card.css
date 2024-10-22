@@ -4,13 +4,11 @@
     max-width: 1120px;
     width: 100%;
     background-color: white;
-<<<<<<< HEAD
     padding:80px 0;
     cursor:grab;
-=======
     padding:100px 0;
-    cursor: grab;
->>>>>>> af6e889fe41d0d465efd03334254f62645e5c062
+  
+
 }
 
 .slide-content {
@@ -24,11 +22,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 20px;
-<<<<<<< HEAD
     cursor:grab;
-=======
-    cursor: grab;
->>>>>>> af6e889fe41d0d465efd03334254f62645e5c062
 }
 .swiper-slide{
     text-align: center;
