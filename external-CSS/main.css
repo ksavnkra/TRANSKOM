@@ -1,9 +1,10 @@
-.top-navv{
+.top-navv {
     position: sticky;
     top: 0;
     background-color: white;
     z-index: 2000;
 }
+
 .team {
     position: relative;
     width: 100%;
