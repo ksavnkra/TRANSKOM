@@ -5,7 +5,7 @@
     width: 100%;
     background-color: white;
     padding:100px 0;
-    cursor:-moz-grabbing;
+    cursor: grab;
 }
 
 .slide-content {
@@ -19,10 +19,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 20px;
+    cursor: grab;
 }
 
 .card:hover {
     background-color: #e0e1e4;
+    cursor: grab;
 }
 
 .image-content,
@@ -55,7 +57,7 @@
 
 }
 .section4{
-    height: 70vh;
+    height: 80vh;
 }
 .title {
     font-size: 18px;
