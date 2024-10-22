@@ -10,7 +10,7 @@
     width:100%;
     background-color: white;
     padding:100px 0;
-    cursor:grabbing;
+    cursor:-moz-grabbing;
 }
 .slide-content{
     margin:0 40px;
