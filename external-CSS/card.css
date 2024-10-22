@@ -4,8 +4,8 @@
     max-width: 1120px;
     width: 100%;
     background-color: white;
-    padding: 100px 0;
-    cursor:grabbing;
+    padding:100px 0;
+    cursor:-moz-grabbing;
 }
 
 .slide-content {
