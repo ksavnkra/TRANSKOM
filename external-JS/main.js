@@ -25,8 +25,3 @@ var swiper = new Swiper(".slide-content", {
 
   },
 });
-
-  $('.logo').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-    return false;
-  });
