@@ -1,3 +1,22 @@
+footer{
+    margin-top: 200px;
+    background: black;
+    color:white;
+    padding:0%;
+}
+.title2{
+    text-align: center;
+    font-size: 50px;
+   
+}
+.sub{
+    margin-top:50px;
+
+}
+.mail{
+    margin-top:30px;
+    font-size: 150px;
+}
 .section3{
     padding-bottom: 1vw;
 }
