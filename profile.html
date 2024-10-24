@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="external-CSS/profile.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="Profile images/user.png" class="user-pic" onclick="toggleMenu( )"> 
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="Profile images/user.png">
+                        <h2>John Doe</h2>
+                    </div>
+                    <hr>
+      
+                    <a href="edit-profile.html" class="sub-menu-link">
+                        <img src="Profile images/profile.png">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    
+                   
+                    <a href="login.html" class="sub-menu-link">
+                      <img src="Profile images/profile.png">
+                      <p>Logout</p>
+                      <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+        <script>
+        let subMenu = document.getElementById("subMenu");
+
+function toggleMenu(){
+    subMenu.classList.toggle("open-menu");
+}
+</script>
+
+</body>
+</html>
