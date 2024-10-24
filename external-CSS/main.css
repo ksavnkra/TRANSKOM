@@ -350,6 +350,11 @@ a:hover {
     margin-bottom: 5vh;
     /* padding-bottom: 5vh; */
 }
+.footer{
+    background:black;
+    color: white;
+
+}
 
 @media (max-width: 1048px) {
     .buy-sell-boxes {
