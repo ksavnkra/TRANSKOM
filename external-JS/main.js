@@ -25,3 +25,9 @@ var swiper = new Swiper(".slide-content", {
 
   },
 });
+
+$(document).ready(function () {
+  $(".Contact").click(function () {
+    alert('You can Write us a mail or can call us on!\nEmail: Transkom@gmail.com\nMobile Number: +919999999999');
+  });
+});
