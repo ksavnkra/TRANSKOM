@@ -26,11 +26,7 @@ var swiper = new Swiper(".slide-content", {
   },
 });
 
-<<<<<<< HEAD
-
-=======
   $('.logo').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
     return false;
   });
->>>>>>> e251b7cd15cf6a2d17354c8789a7e4183d7fb8b1
