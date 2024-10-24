@@ -12,7 +12,7 @@ var swiper = new Swiper(".slide-content", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  breakpoints:{
+  breakpoints: {
     0: {
       slidesPerView: 1,
     },
@@ -20,10 +20,17 @@ var swiper = new Swiper(".slide-content", {
       slidesPerView: 2,
     },
     950: {
-      slidesPerView: 3 ,
+      slidesPerView: 3,
     }
 
   },
 });
 
+<<<<<<< HEAD
 
+=======
+  $('.logo').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    return false;
+  });
+>>>>>>> e251b7cd15cf6a2d17354c8789a7e4183d7fb8b1
