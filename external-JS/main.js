@@ -12,7 +12,7 @@ var swiper = new Swiper(".slide-content", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  breakpoints:{
+  breakpoints: {
     0: {
       slidesPerView: 1,
     },
@@ -20,8 +20,13 @@ var swiper = new Swiper(".slide-content", {
       slidesPerView: 2,
     },
     950: {
-      slidesPerView: 3 ,
+      slidesPerView: 3,
     }
 
   },
 });
+
+  $('.logo').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    return false;
+  });
