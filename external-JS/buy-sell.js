@@ -1,4 +1,3 @@
-const API_KEY = "ce9c8c2d11cd2e814fe0c957";
 const API_BASE_URL = 'https://api.exchangerate-api.com/v4/latest/';
 const TRANSACTION_FEE = 0.015; // 1.5%
 let currentMode = 'buy';
