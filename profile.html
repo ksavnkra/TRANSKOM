@@ -90,13 +90,10 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
             <a class="nav-link active" data-section="profile">Profile</a>
-            <a class="nav-link" data-section="security">Security</a>
-            <a class="nav-link" data-section="notifications">Notifications</a>
             <a class="nav-link text-danger" onclick="logoutUser()">Logout</a>
         </nav>
         <hr class="mt-0 mb-4">
@@ -155,261 +152,165 @@
                 </div>
             </div>
         </div>
-=======
-    <div class="container">
->>>>>>> 5e0465604a974362700a666d442cbfbbf5d93141
-
-        <!-- Security Section -->
-        <div id="security-section" class="content-section">
-            <div class="card mb-4">
-                <div class="card-header">Security Settings</div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="small mb-1" for="currentPassword">Current Password</label>
-                            <input class="form-control" id="currentPassword" type="password"
-                                placeholder="Enter current password">
-                        </div>
-                        <div class="mb-3">
-                            <label class="small mb-1" for="newPassword">New Password</label>
-                            <input class="form-control" id="newPassword" type="password"
-                                placeholder="Enter new password">
-                        </div>
-                        <div class="mb-3">
-                            <label class="small mb-1" for="confirmPassword">Confirm Password</label>
-                            <input class="form-control" id="confirmPassword" type="password"
-                                placeholder="Confirm new password">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-check">
-                                <input class="form-check-input" type="checkbox" id="twoFactorAuth">
-                                <span class="form-check-label">Enable Two-Factor Authentication</span>
-                            </label>
-                        </div>
-                        <button class="btn btn-primary" type="button">Update Security Settings</button>
-                    </form>
-                </div>
-            </div>
-<<<<<<< HEAD
-        </div>
-
-        <!-- Notifications Section -->
-        <div id="notifications-section" class="content-section">
-            <div class="card mb-4">
-                <div class="card-header">Notification Preferences</div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-check">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <span class="form-check-label">Email notifications for transactions</span>
-                            </label>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-check">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <span class="form-check-label">SMS alerts for large transactions</span>
-                            </label>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-check">
-                                <input class="form-check-input" type="checkbox">
-                                <span class="form-check-label">Price alerts for watched currencies</span>
-                            </label>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-check">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <span class="form-check-label">Security alerts</span>
-                            </label>
-                        </div>
-                        <button class="btn btn-primary" type="button">Save Notification Preferences</button>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 
-    </div>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="external-JS/profile.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
     <script>
-        // Check if user is logged in
-        window.onload = function () {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            if (!currentUser) {
-                window.location.href = 'login.html';
-                return;
-            }
+        const firebaseConfig = {
+            apiKey: "AIzaSyCR-b3mbk8WuBXX7wBuG92UkyfKlgLJtvo",
+            authDomain: "transkom-3ea14.firebaseapp.com",
+            projectId: "transkom-3ea14",
+            storageBucket: "transkom-3ea14.firebasestorage.app",
+            messagingSenderId: "243240734030",
+            appId: "1:243240734030:web:c70c81feddc77f62d7a21f",
+            measurementId: "G-X9SQ8G7NXE"
+        };
 
-            // Load user data into form
-            loadUserData(currentUser.email);
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore(); // Initialize Firestore
+
+        // Function to load and display user data from Firestore
+        function loadUserProfile(userId) {
+            const userDocRef = db.collection("users").doc(userId); // Reference to the user's document
+
+            userDocRef.get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const userData = doc.data();
+                        // Populate the form fields with user data
+                        document.getElementById("name").innerHTML = userData.firstName || "";
+                        document.getElementById("email").innerHTML = userData.email || "";
+                        document.getElementById("phone").innerHTML = userData.contactNumber || "";
+                    } else {
+                        console.log("User document not found!");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data:", error);
+                });
         }
 
-        function loadUserData(email) {
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
-            const user = users.find(u => u.email === email);
-
+        // Check if a user is logged in
+        auth.onAuthStateChanged((user) => {
             if (user) {
-                document.getElementById('inputFirstName').value = user.firstName || '';
-                document.getElementById('inputLastName').value = user.lastName || '';
-                document.getElementById('inputEmailAddress').value = user.email || '';
-                document.getElementById('inputPhone').value = user.contact || '';
+                // If user is logged in, load their profile data
+                loadUserProfile(user.uid);
+            } else {
+                console.log("No user is signed in");
+                // Optionally, redirect to login page or handle unauthenticated state
             }
+        });
+
+        // Function to handle logout
+        function logoutUser() {
+            firebase.auth().signOut()
+                .then(() => {
+                    // Redirect to login page after successful logout
+                    window.location.href = 'login.html';
+                })
+                .catch((error) => {
+                    console.error('Error during logout:', error);
+                    alert('Failed to logout. Please try again.');
+                });
         }
 
-        function updateProfile() {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
-            const userIndex = users.findIndex(u => u.email === currentUser.email);
+        // Function to load and display user data from Firestore
+        function loadUserProfile(userId) {
+            const userDocRef = db.collection("users").doc(userId);
 
-            if (userIndex === -1) {
-                showMessage('Error updating profile', 'danger');
-                return;
-            }
-
-            // Update user data
-            const updatedUser = {
-                ...users[userIndex],
-                firstName: document.getElementById('inputFirstName').value,
-                lastName: document.getElementById('inputLastName').value,
-                contact: document.getElementById('inputPhone').value
-            };
-
-            users[userIndex] = updatedUser;
-            localStorage.setItem('users', JSON.stringify(users));
-
-            // Update current user session
-            localStorage.setItem('currentUser', JSON.stringify({
-                email: updatedUser.email,
-                firstName: updatedUser.firstName,
-                lastName: updatedUser.lastName,
-                contact: updatedUser.contact
-            }));
-
-            showMessage('Profile updated successfully!', 'success');
+            userDocRef.get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const userData = doc.data();
+                        // Populate the form fields with user data
+                        document.getElementById("inputFirstName").value = userData.firstName || "";
+                        document.getElementById("inputLastName").value = userData.lastName || "";
+                        document.getElementById("inputEmailAddress").value = userData.email || "";
+                        document.getElementById("inputPhone").value = userData.contactNumber || "";
+                    } else {
+                        console.log("User document not found!");
+                        // If no document exists, populate at least the email from auth
+                        const user = firebase.auth().currentUser;
+                        if (user) {
+                            document.getElementById("inputEmailAddress").value = user.email || "";
+                        }
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data:", error);
+                    showMessage("Error loading profile data. Please refresh the page.", "danger");
+                });
         }
 
+        // Function to show messages to the user
         function showMessage(message, type) {
-            const messageDiv = document.getElementById('update-message');
-            messageDiv.textContent = message;
+            const messageDiv = document.getElementById("update-message");
             messageDiv.className = `alert alert-${type}`;
-            messageDiv.style.display = 'block';
+            messageDiv.textContent = message;
+            messageDiv.style.display = "block";
 
+            // Hide the message after 3 seconds
             setTimeout(() => {
-                messageDiv.style.display = 'none';
+                messageDiv.style.display = "none";
             }, 3000);
         }
 
-        function logoutUser() {
-            localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
+        // Function to update profile
+        function updateProfile() {
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                showMessage("Please login again to update your profile.", "danger");
+                return;
+            }
+
+            const userData = {
+                firstName: document.getElementById("inputFirstName").value,
+                lastName: document.getElementById("inputLastName").value,
+                email: document.getElementById("inputEmailAddress").value,
+                contactNumber: document.getElementById("inputPhone").value,
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+            };
+
+            db.collection("users").doc(user.uid).set(userData, { merge: true })
+                .then(() => {
+                    showMessage("Profile updated successfully!", "success");
+                })
+                .catch((error) => {
+                    console.error("Error updating profile:", error);
+                    showMessage("Error updating profile. Please try again.", "danger");
+                });
         }
 
-        // Your existing navigation and image upload code
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Remove active class from all links and sections
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-
-                // Add active class to clicked link and corresponding section
-                link.classList.add('active');
-                const sectionId = `${link.dataset.section}-section`;
-                document.getElementById(sectionId)?.classList.add('active');
-            });
+        // Check authentication state when page loads
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in, load their profile data
+                loadUserProfile(user.uid);
+            } else {
+                // No user is signed in, redirect to login page
+                window.location.href = 'login.html';
+            }
         });
 
+        // Handle profile image upload
         document.getElementById('image-upload').addEventListener('change', function (e) {
-            if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            if (file) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     document.getElementById('profile-image').src = e.target.result;
                 };
-                reader.readAsDataURL(e.target.files[0]);
+                reader.readAsDataURL(file);
             }
         });
     </script>
-=======
-
-        
-                <div class="profile-photo">
-                    <img src="./rsrc/icons8-male-user-100.png" alt="Profile photo" class="avatar" id="profile-image">
-                    <input type="file" id="photo-upload" hidden accept="image/*">
-                    <button type="button" class="photo-button" onclick="document.getElementById('photo-upload').click()">
-                        Change Photo
-                    </button>
-                </div>
-                Full Name
-                <div class="form-group" id="name"> 
-                </div>
-                Email ID:
-                <div class="form-group" id="email">
-                </div>
-                Phone Number
-                <div class="form-group" id="phone">
-                </div>
-
-                
-         
-        </div>
-
-        
-
- <script src="external-JS/profile.js"></script>
- <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
- <script>
-    const firebaseConfig = {
-    apiKey: "AIzaSyCR-b3mbk8WuBXX7wBuG92UkyfKlgLJtvo",
-    authDomain: "transkom-3ea14.firebaseapp.com",
-    projectId: "transkom-3ea14",
-    storageBucket: "transkom-3ea14.firebasestorage.app",
-    messagingSenderId: "243240734030",
-    appId: "1:243240734030:web:c70c81feddc77f62d7a21f",
-    measurementId: "G-X9SQ8G7NXE"
-  };
-
-
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore(); // Initialize Firestore
-
-// Function to load and display user data from Firestore
-function loadUserProfile(userId) {
-  const userDocRef = db.collection("users").doc(userId); // Reference to the user's document
-
-  userDocRef.get()
-    .then((doc) => {
-      if (doc.exists) {
-        const userData = doc.data();
-        // Populate the form fields with user data
-        document.getElementById("name").innerHTML = userData.firstName || "";
-        document.getElementById("email").innerHTML = userData.email || "";
-        document.getElementById("phone").innerHTML = userData.contactNumber || "";
-      } else {
-        console.log("User document not found!");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching user data:", error);
-    });
-}
-
-// Check if a user is logged in
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    // If user is logged in, load their profile data
-    loadUserProfile(user.uid);
-  } else {
-    console.log("No user is signed in");
-    // Optionally, redirect to login page or handle unauthenticated state
-  }
-});
- </script>
->>>>>>> 5e0465604a974362700a666d442cbfbbf5d93141
 </body>
 
 </html>
