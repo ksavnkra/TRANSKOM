@@ -90,6 +90,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
@@ -154,6 +155,9 @@
                 </div>
             </div>
         </div>
+=======
+    <div class="container">
+>>>>>>> 5e0465604a974362700a666d442cbfbbf5d93141
 
         <!-- Security Section -->
         <div id="security-section" class="content-section">
@@ -186,6 +190,7 @@
                     </form>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
 
         <!-- Notifications Section -->
@@ -326,6 +331,85 @@
             }
         });
     </script>
+=======
+
+        
+                <div class="profile-photo">
+                    <img src="./rsrc/icons8-male-user-100.png" alt="Profile photo" class="avatar" id="profile-image">
+                    <input type="file" id="photo-upload" hidden accept="image/*">
+                    <button type="button" class="photo-button" onclick="document.getElementById('photo-upload').click()">
+                        Change Photo
+                    </button>
+                </div>
+                Full Name
+                <div class="form-group" id="name"> 
+                </div>
+                Email ID:
+                <div class="form-group" id="email">
+                </div>
+                Phone Number
+                <div class="form-group" id="phone">
+                </div>
+
+                
+         
+        </div>
+
+        
+
+ <script src="external-JS/profile.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+ <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyCR-b3mbk8WuBXX7wBuG92UkyfKlgLJtvo",
+    authDomain: "transkom-3ea14.firebaseapp.com",
+    projectId: "transkom-3ea14",
+    storageBucket: "transkom-3ea14.firebasestorage.app",
+    messagingSenderId: "243240734030",
+    appId: "1:243240734030:web:c70c81feddc77f62d7a21f",
+    measurementId: "G-X9SQ8G7NXE"
+  };
+
+
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore(); // Initialize Firestore
+
+// Function to load and display user data from Firestore
+function loadUserProfile(userId) {
+  const userDocRef = db.collection("users").doc(userId); // Reference to the user's document
+
+  userDocRef.get()
+    .then((doc) => {
+      if (doc.exists) {
+        const userData = doc.data();
+        // Populate the form fields with user data
+        document.getElementById("name").innerHTML = userData.firstName || "";
+        document.getElementById("email").innerHTML = userData.email || "";
+        document.getElementById("phone").innerHTML = userData.contactNumber || "";
+      } else {
+        console.log("User document not found!");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching user data:", error);
+    });
+}
+
+// Check if a user is logged in
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // If user is logged in, load their profile data
+    loadUserProfile(user.uid);
+  } else {
+    console.log("No user is signed in");
+    // Optionally, redirect to login page or handle unauthenticated state
+  }
+});
+ </script>
+>>>>>>> 5e0465604a974362700a666d442cbfbbf5d93141
 </body>
 
 </html>

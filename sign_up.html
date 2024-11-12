@@ -13,20 +13,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="build/js/intlTelInput.js"></script>
-    <title>TRANSKOM : Foreign Currency Exchange Program</title>
+    <title>TR
+
+
+
+        <title>TRANSKOM : Foreign Currency Exchange Program</title>
+
 </head>
 
 <body>
     <div class="logo-login">
-        <img src="rsrc/transkom_logo_1.png" width="70px">
-        Transkom
+        <img src="rsrc/transkom_logo_1.png" width="100px">
     </div>
-    <img style="margin-left: 72.4%;" src="rsrc/icons8-male-user-100.png">
-    <br>
-    <div class="Sign-In-Text">
-        Sign Up
+    <div class="text-center">
+        <img style="margin-left: 60%;" src="rsrc/icons8-male-user-100.png" width="100px" alt="User Icon">
     </div>
-    <br>
+    <div class="Sign-In-Text">Sign Up</div>
     <div class="Input">
         <div id="error-message" style="color: red; margin-bottom: 10px; display: none;"></div>
         <div id="success-message" style="color: green; margin-bottom: 10px; display: none;"></div>
@@ -49,7 +51,6 @@
             <button class="Input-Button" name="Sign-In" id="Sign-In" style="color: white;background: green;">Already
                 have an Account? Sign In</button>
         </a>
-        <br>
     </div>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
@@ -72,8 +73,8 @@
         var input = document.querySelector("#contact-number");
         window.intlTelInput(input, {});
         function NumberOnly() {
-            var num = /[^(0-9 , '+')]/gi;
-            input.value = input.value.replace(num, "");
+            var input = document.querySelector("#contact-number");
+            input.value = input.value.replace(/[^\d+]/g, "");
         }
 
         // Sign-up function
@@ -84,7 +85,6 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
-
             if (!firstName || !lastName || !contactNumber || !email || !password) {
                 alert("Please fill all fields");
                 return;
@@ -93,7 +93,6 @@
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-
                     return db.collection("users").doc(user.uid).set({
                         firstName: firstName,
                         lastName: lastName,

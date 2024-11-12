@@ -39,6 +39,48 @@
         </a>
         <br>
     </div>
+<<<<<<< HEAD
+=======
+</body>
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyCR-b3mbk8WuBXX7wBuG92UkyfKlgLJtvo",
+    authDomain: "transkom-3ea14.firebaseapp.com",
+    projectId: "transkom-3ea14",
+    storageBucket: "transkom-3ea14.firebasestorage.app",
+    messagingSenderId: "243240734030",
+    appId: "1:243240734030:web:c70c81feddc77f62d7a21f",
+    measurementId: "G-X9SQ8G7NXE"
+  };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    document.getElementById("Sign-In").addEventListener("click", function () {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in successfully
+                const user = userCredential.user;
+                alert("Login successful! Welcome, " + user.email);
+                // Redirect to the dashboard or main page
+                window.location.href = "index.html";
+            })
+            .catch((error) => {
+                // Handle login errors
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert("Error: " + errorMessage);
+            });
+    });
+</script>
+>>>>>>> 5e0465604a974362700a666d442cbfbbf5d93141
 
     <script>
         // Check if user is already logged in
