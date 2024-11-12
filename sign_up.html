@@ -28,34 +28,87 @@
     </div>
     <br>
     <div class="Input">
-        <input class="Input-Name" name="first-name" id="first-name" placeholder="First Name" type="string" value="">
+        <div id="error-message" style="color: red; margin-bottom: 10px; display: none;"></div>
+        <div id="success-message" style="color: green; margin-bottom: 10px; display: none;"></div>
+        <input class="Input-Name" name="first-name" id="first-name" placeholder="First Name" type="text" value="">
         &nbsp;
-        <input class="Input-Name" name="last-name" id="last-name" placeholder="Last Name" type="string" value="">
+        <input class="Input-Name" name="last-name" id="last-name" placeholder="Last Name" type="text" value="">
         <br>
         <br>
-        <input class="Input-contact" type="tel" id="contact-number" placeholder="Contact Number" onkeyup="NumberOnly()">
+        <input class="Input-Email" style="width: 30.8vw;" type="tel" id="contact-number" placeholder="Contact Number"
+            onkeyup="NumberOnly()">
         <br>
         <br>
-        <input class=" Input-Email" name="email" id="email" placeholder="Email id" >
+        <input class="Input-Email" name="email" id="email" placeholder="Email id">
         <br>
         <input class="Input-Email" name="password" id="password" placeholder="Password" type="password">
         <br>
-        <button class="Input-Button" name="Sign-Up" id="Sign-Up">Continue</button>
+        <button class="Input-Button" name="Sign-Up" id="sign-up">Continue</button>
         <br>
         <a href="login.html">
             <button class="Input-Button" name="Sign-In" id="Sign-In" style="color: white;background: green;">Already
-                have an
-                Account? Sign In</button>
+                have an Account? Sign In</button>
         </a>
         <br>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCR-b3mbk8WuBXX7wBuG92UkyfKlgLJtvo",
+            authDomain: "transkom-3ea14.firebaseapp.com",
+            projectId: "transkom-3ea14",
+            storageBucket: "transkom-3ea14.firebasestorage.app",
+            messagingSenderId: "243240734030",
+            appId: "1:243240734030:web:c70c81feddc77f62d7a21f",
+            measurementId: "G-X9SQ8G7NXE"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
         var input = document.querySelector("#contact-number");
         window.intlTelInput(input, {});
         function NumberOnly() {
             var num = /[^(0-9 , '+')]/gi;
             input.value = input.value.replace(num, "");
         }
+
+        // Sign-up function
+        document.getElementById("sign-up").addEventListener("click", function () {
+            const firstName = document.getElementById("first-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const contactNumber = document.getElementById("contact-number").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+
+            if (!firstName || !lastName || !contactNumber || !email || !password) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+
+                    return db.collection("users").doc(user.uid).set({
+                        firstName: firstName,
+                        lastName: lastName,
+                        contactNumber: contactNumber,
+                        email: email
+                    });
+                })
+                .then(() => {
+                    alert("User signed up and data saved successfully!");
+                    window.location.href = 'login.html';
+                })
+                .catch((error) => {
+                    alert("Error: " + error.message);
+                });
+        });
     </script>
 </body>
 

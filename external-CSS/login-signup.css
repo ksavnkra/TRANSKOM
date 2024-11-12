@@ -57,10 +57,7 @@ body {
     display: inline-block;
 }
 
-.Input-contact {
-    display: flex;
-    flex-direction: row;
-    -webkit-box-align: center;
+/* .Input-contact {
     align-items: center;
     width: 202%;
     height: 4.8rem;
@@ -71,7 +68,7 @@ body {
     color: rgb(97, 97, 97);
     margin-right: 5px;
     display: inline-block;
-}
+} */
 
 .Input-Button {
     display: flex;

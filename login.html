@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,6 @@
 </head>
 
 <body>
-
-    <!-- <p style="background-image: url('rsrc/Screenshot 2024-10-13 222947.png');"></p> -->
     <div class="logo-login">
         <img src="rsrc/transkom_logo_1.png" width="70px">
         Transkom
@@ -29,11 +26,12 @@
     </div>
     <br>
     <div class="Input">
+        <div id="error-message" style="color: red; margin-bottom: 10px; display: none;"></div>
         <input class="Input-Email" name="email" id="email" placeholder="Email id" type="string" value="" required>
         <br>
         <input class="Input-Email" name="password" id="password" placeholder="Password" type="password" required>
         <br>
-        <button class="Input-Button" name="Sign-In" id="Sign-In" type="submit">Continue</button>
+        <button class="Input-Button" name="Sign-In" id="Sign-In" type="submit" onclick="loginUser()">Continue</button>
         <br>
         <a href="sign_up.html">
             <button class="Input-Button" name="Sign-Up" id="Sign-Up" style="color: white;background: green;">Create a
@@ -41,6 +39,48 @@
         </a>
         <br>
     </div>
-</body>
 
+    <script>
+        // Check if user is already logged in
+        window.onload = function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function loginUser() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Basic validation
+            if (!email || !password) {
+                errorMessage.textContent = 'Please fill in all fields';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Get users from localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                // Store logged in user
+                localStorage.setItem('currentUser', JSON.stringify({
+                    email: user.email,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    contact: user.contact
+                }));
+
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.textContent = 'Invalid email or password';
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
 </html>
