@@ -51,5 +51,8 @@ function handleSubmit(event) {
     const receiveCurrency = document.getElementById('receiveCurrency').value;
     const receiveAmount = document.getElementById('receiveAmount').value;
     alert(`Transaction Summary:\n\nMode: ${currentMode}\nAmount: ${payAmount} ${payCurrency}\nTo: ${receiveAmount} ${receiveCurrency}\nIncludes 1.5% Transkom fee`);
+    document.getElementById('payAmount').value = '';
+    document.getElementById('receiveAmount').value = '';
 }
+
 document.addEventListener('DOMContentLoaded', updateConversion);
